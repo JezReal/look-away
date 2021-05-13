@@ -1,0 +1,14 @@
+#status-container {
+    border: 1px solid white;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: row;
+}
+
+#work {
+    padding: 7px 35px;
+}
+
+#look-away {
+    padding: 7px 25px;
+}
