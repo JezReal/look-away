@@ -3,9 +3,6 @@ import Timer from "./Timer/Timer";
 
 function App() {
 
-    //set style depending on status (work or look  away)
-
-
     return (
         <div id="app-container">
             <h1>Look away</h1>
