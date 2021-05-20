@@ -19,33 +19,6 @@ hr {
     color: white;
 }
 
-#status-container {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-#status-container div {
-    border: 1px solid white;
-    font-family: "Montserrat", sans-serif;
-}
-
-#work {
-    padding: 7px 35px;
-}
-
-#look-away {
-    padding: 7px 25px;
-}
-
-#timer-text {
-    margin-top: 60px;
-    font-size: 80px;
-    font-weight: bold;
-    color: white;
-    font-family: "Montserrat", sans-serif;
-}
-
 button {
     margin-top: 50px;
     border: 2px solid white;

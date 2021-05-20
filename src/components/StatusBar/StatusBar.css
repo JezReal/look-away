@@ -5,6 +5,11 @@
     flex-direction: row;
 }
 
+#status-container div {
+    border: 1px solid white;
+    font-family: "Montserrat", sans-serif;
+}
+
 #work {
     padding: 7px 35px;
 }
