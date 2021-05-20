@@ -1,0 +1,12 @@
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+#timer-text {
+    margin-top: 60px;
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
