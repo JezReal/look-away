@@ -5,7 +5,13 @@ export const format = (timeToFormat) => {
     let minutes = Math.floor(timeToFormat / minuteToMillis)
     let seconds = (timeToFormat % minuteToMillis) / secondToMillis
 
-    //TODO: pad single digits with zeros
+    if (minutes < 10) {
+        minutes = `0${minutes}`
+    }
+
+    if (seconds < 10) {
+        seconds = `0${seconds}`
+    }
 
     let time = {
         "minutes": minutes,
