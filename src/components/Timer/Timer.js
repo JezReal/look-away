@@ -1,16 +1,38 @@
 import StatusBar from "../StatusBar/StatusBar";
-import {format} from "../../util/TimeFormatter";
 import Button from "../Button/Button";
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import "./Timer.css"
+import {format} from "../../util/TimeFormatter";
 
 const Timer = () => {
     const [status, setStatus] = useState("work")
-    const [buttonText, setButtonText] = useState("Start")
-    const [timerCount, setTimerCount] = useState(1200000)
-    const [isTimerRunning, setIsTimerRunning] = useState(false)
+    const [buttonText, setButtonText] = useState("Stop")
+    const [timerCount, setTimerCount] = useState(8000)
+    const [paused, setPaused] = useState(false)
+    const [over, setOver] = useState(false)
 
-    const changeText = () => {
+    const tick = () => {
+        if (paused || over) {
+            return
+        }
+
+        if (timerCount === 0) {
+            setStatus("look-away")
+            setTimerCount(20000)
+            setOver(true)
+        } else {
+            setTimerCount(timerCount => timerCount - 1000)
+        }
+    }
+
+    useEffect(() => {
+        const timer = setInterval(() => tick(), 1000)
+        return () => clearInterval(timer)
+    })
+
+    const handleButtonClick = () => {
+        setPaused(!paused)
+
         if (buttonText === "Start") {
             setButtonText("Stop")
         } else {
@@ -18,25 +40,6 @@ const Timer = () => {
         }
     }
 
-    const toggleTimer = () => {
-        let timer
-
-        // if (!isTimerRunning) {
-        //     timer = setInterval(() => {
-        //         if (timerCount > 0) {
-        //             setTimerCount(timerCount => timerCount - 1000)
-        //         } else {
-        //             clearInterval(timer)
-        //             setTimerCount(0)
-        //         }
-        //     }, 1000)
-        //     setIsTimerRunning(true)
-        // } else {
-        //     timer = null
-        //     setTimerCount(1200000)
-        //     setIsTimerRunning(false)
-        // }
-    }
     return (
         <>
             <StatusBar status={status}/>
@@ -47,11 +50,9 @@ const Timer = () => {
                 </h3>
             </div>
 
-            <Button onClick={() => {
-                changeText()
-                toggleTimer()
-            }
-            } text={buttonText}/>
+            <Button text={buttonText} onClick={
+                handleButtonClick
+            }/>
         </>
     )
 }
