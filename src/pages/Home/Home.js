@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import Timer from "../Timer/Timer";
+import Timer from "../../components/Timer/Timer";
 import "./Home.css"
 
 const Home = () => {

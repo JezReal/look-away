@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Home from "./Home/Home";
-import Information from "../pages/Information";
+import Home from "../pages/Home/Home";
+import Information from "../pages/Information/Information";
 
 function App() {
 
