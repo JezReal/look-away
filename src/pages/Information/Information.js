@@ -8,7 +8,7 @@ const Information = () => {
             <div id="content-container">
 
                 <div className="article-container">
-                    <h3 className="article-title">
+                    <h3 className="article-title" id="first-item">
                         What is "Look Away"?
                     </h3>
 
