@@ -1,6 +1,6 @@
 import StatusBar from "../StatusBar/StatusBar";
 import Button from "../Button/Button";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import "./Timer.css"
 import {format} from "../../util/TimeFormatter";
 
