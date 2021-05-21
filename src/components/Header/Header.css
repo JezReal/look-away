@@ -1,0 +1,16 @@
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10vh;
+    background-color: #5DC0DB;
+}
+
+#header p {
+    margin-left: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    color: white;
+}
