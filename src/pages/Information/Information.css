@@ -1,0 +1,27 @@
+#content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.article-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #2E5C62;
+    margin-bottom: 20px;
+}
+
+.article-content {
+    color: #2E5C62;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.article-container {
+    margin-top: 70px;
+    width: 70vw;
+}
