@@ -7,7 +7,7 @@ import {format} from "../../util/TimeFormatter";
 const Timer = () => {
     const [status, setStatus] = useState("work")
     const [buttonText, setButtonText] = useState("Stop")
-    const [timerCount, setTimerCount] = useState(8000)
+    const [timerCount, setTimerCount] = useState(40000)
     const [paused, setPaused] = useState(false)
     const [over, setOver] = useState(false)
 
@@ -16,10 +16,14 @@ const Timer = () => {
             return
         }
 
-        if (timerCount === 0) {
+        if (timerCount === 21000) {
             setStatus("look-away")
-            setTimerCount(20000)
+            setTimerCount(timerCount => timerCount - 1000)
+        } else if (timerCount === 0) {
             setOver(true)
+            setStatus("work")
+            setTimerCount(40000)
+            setOver(false)
         } else {
             setTimerCount(timerCount => timerCount - 1000)
         }
