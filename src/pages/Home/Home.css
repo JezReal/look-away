@@ -1,3 +1,8 @@
+#root-container {
+    background-color: #5DC0DB;
+    height: 100vh;
+}
+
 #app-container {
     margin-top: 15vh;
     display: flex;
@@ -6,7 +11,7 @@
     align-items: center;
 }
 
-h1 {
+#app-title {
     font-family: "Montserrat", sans-serif;
     font-size: 80px;
     margin-bottom: 30px;
