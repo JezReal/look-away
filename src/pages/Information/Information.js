@@ -14,8 +14,8 @@ const Information = () => {
 
                     <p className="article-content">
                         As everyone is now working or learning from home, the time that we spend staring at screens have been greater than ever.
-                        Naturally, this comes with it a lot of potential problems. One of these is digital eye strain. <a href="https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/computer-vision-syndrome?sso=y" target="_blank" rel="noreferrer">Digital eye strain</a>
-                        describes a group of eye and vision-related problems that arise from prolonged use of digital devices.
+                        Naturally, this comes with it a lot of potential problems. One of these is digital eye strain. <a href="https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/computer-vision-syndrome?sso=y" target="_blank" rel="noreferrer">Digital eye strain</a> describes
+                        a group of eye and vision-related problems that arise from prolonged use of digital devices.
                         With this, we thought of creating a web app that can help in minimizing digital eye strain which gave birth to look away.
                     </p>
                 </div>
