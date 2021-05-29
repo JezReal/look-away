@@ -29,3 +29,7 @@
 #first-item {
     margin-top: 70px;
 }
+
+.article-content a {
+    color: #2E5C62;
+}
