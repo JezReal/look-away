@@ -3,6 +3,8 @@ import Button from "../Button/Button";
 import {useEffect, useState} from "react";
 import "./Timer.css"
 import {format} from "../../util/TimeFormatter";
+import Sound from "react-sound"
+import sound from "../../assets/sfx/alert_notification.mp3"
 
 const Timer = () => {
     const twentyMinutes = 1200000
@@ -13,6 +15,8 @@ const Timer = () => {
     const [timerCount, setTimerCount] = useState(twentyMinutes)
     const [paused, setPaused] = useState(true)
     const [over, setOver] = useState(false)
+    const [soundStatus, setSoundStatus] = useState(Sound.status.STOPPED)
+
 
     const tick = () => {
         if (paused || over) {
@@ -24,13 +28,17 @@ const Timer = () => {
             setStatus("look-away")
             setTimerCount(twentySeconds)
             setOver(false)
+            setSoundStatus(Sound.status.PLAYING)
         } else if (timerCount === 0 && status === "look-away") {
             setOver(true)
             setStatus("work")
             setTimerCount(twentyMinutes)
             setOver(false)
+
+            setSoundStatus(Sound.status.PLAYING)
         } else {
             setTimerCount(timerCount => timerCount - 1000)
+            setSoundStatus(Sound.status.STOPPED)
         }
     }
 
@@ -41,7 +49,6 @@ const Timer = () => {
 
     const handleButtonClick = () => {
         setPaused(!paused)
-
         if (buttonText === "Start") {
             setButtonText("Stop")
         } else {
@@ -62,6 +69,11 @@ const Timer = () => {
             <Button text={buttonText} onClick={
                 handleButtonClick
             }/>
+
+            <Sound
+                url={sound}
+                playStatus={soundStatus}
+            />
         </>
     )
 }
