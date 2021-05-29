@@ -5,10 +5,13 @@ import "./Timer.css"
 import {format} from "../../util/TimeFormatter";
 
 const Timer = () => {
+    const twentyMinutes = 1200000
+    const twentySeconds = 20000
+
     const [status, setStatus] = useState("work")
-    const [buttonText, setButtonText] = useState("Stop")
-    const [timerCount, setTimerCount] = useState(1220000)
-    const [paused, setPaused] = useState(false)
+    const [buttonText, setButtonText] = useState("Start")
+    const [timerCount, setTimerCount] = useState(twentyMinutes)
+    const [paused, setPaused] = useState(true)
     const [over, setOver] = useState(false)
 
     const tick = () => {
@@ -16,13 +19,15 @@ const Timer = () => {
             return
         }
 
-        if (timerCount === 21000) {
+        if (timerCount === 0 && status === "work") {
+            setOver(true)
             setStatus("look-away")
-            setTimerCount(timerCount => timerCount - 1000)
-        } else if (timerCount === 0) {
+            setTimerCount(twentySeconds)
+            setOver(false)
+        } else if (timerCount === 0 && status === "look-away") {
             setOver(true)
             setStatus("work")
-            setTimerCount(40000)
+            setTimerCount(twentyMinutes)
             setOver(false)
         } else {
             setTimerCount(timerCount => timerCount - 1000)
