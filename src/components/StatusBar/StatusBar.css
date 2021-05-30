@@ -18,3 +18,9 @@
 #look-away {
     padding: 7px 25px;
 }
+
+@media (max-width: 768px) {
+    #status-container div p {
+        font-size: 12px;
+    }
+}

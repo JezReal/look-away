@@ -44,3 +44,18 @@ a:visited {
 a:link {
     color: white;
 }
+
+@media (max-width:768px) {
+    #app-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 60px;
+        margin-bottom: 30px;
+        text-align: center;
+        color: white;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 8px 30px;
+    }
+}
