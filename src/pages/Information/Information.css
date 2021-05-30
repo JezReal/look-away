@@ -34,3 +34,9 @@
 .article-content a {
     color: #2E5C62;
 }
+
+@media (max-width:768px) {
+    .article-content {
+        font-size: 12px;
+    }
+}
